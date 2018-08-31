@@ -1,9 +1,9 @@
 ##################################################################################
 ##################################################################################
-## Template file for problem 1. 						                        ##
-## First, fill in your answer logic below					                    ##
+## Template file for problem 1. 						##
+## First, fill in your answer logic below		                        ##
 ##################################################################################
-#                                LOGIC GOES BELOW                     		    #
+#                                LOGIC GOES BELOW                    		 #
 ##################################################################################
 #
 #
@@ -12,20 +12,20 @@
 #
 ##################################################################################
 ##################################################################################
-## You have to fill in two functions BELOW 					                    ##
-## Both take in input n 				                                        ##
-## 										                                        ##
-## 1. findSum(n)	    : Return expected value of sum  			            ##
-## 2. findNumber(n)  : Return expected value of number        				    ##
-## 																			    ##
+## You have to fill in two functions BELOW 		                        ##
+## Both take in input n 	                                                ##
+## 					                                        ##
+## 1. findSum(n)	    : Return expected value of sum  			##
+## 2. findNumber(n)  : Return expected value of number        	       	        ##
+## 										##									    ##
 ## For both, you only have to fill in the math function where indicated     	##
-## 																			    ##
+## 										##									    ##
 ## You can run this template file to see the output of your functions       	##
-## for n=6.         														    ##
-## Simply run: `python problem1_template.py`                            	    ##
+## for n=6.         								##						    ##
+## Simply run: `python problem1_template.py`                            	##
 ## You should see the output printed once your program runs.                	##
 ##                                                                          	##
-## DO NOT CHANGE ANYTHING ELSE BELOW. ONLY FILL IN THE LOGIC.      		        ##
+## DO NOT CHANGE ANYTHING ELSE BELOW. ONLY FILL IN THE LOGIC.      		##
 ##                                                                          	##
 ## Good Luck!                                                               	##
 ##################################################################################
