@@ -1,23 +1,35 @@
-##############################################################################
-##############################################################################
-## Template file for problem 1. You have to fill in two functions BELOW 	##
-## Both take in input n = number of sides in the die 						##
-## 																			##
-## 1. findSumDieRoll(n)	: Return expected value of sum 						##
+##################################################################################
+##################################################################################
+## Template file for problem 1. 						##
+## First, fill in your answer logic below					##
+##################################################################################
+#                                LOGIC GOES BELOW                     		#
+##################################################################################
+#
+#
+#
+#
+#
+##################################################################################
+##################################################################################
+## You have to fill in two functions BELOW 					##
+## Both take in input n = number of sides in the die 				##
+## 										##									##
+## 1. findSumDieRoll(n)	: Return expected value of sum 				##
 ## 2. findNumberOfRolls(n)  : Return expected value of number of rolls 		##
-## 																		 	##
-## For both, you only have to fill in the math function where indicated     ##
-##                                                                          ##
-## You can run this template file to see the output of your functions       ##
+## 										##									##
+## For both, you only have to fill in the math function where indicated     	##
+## 										##									##
+## You can run this template file to see the output of your functions       	##
 ## for a 6 sided die.														## 
 ## Simply run: `python problem1_template.py`                            	##
-## You should see the output printed once your program runs.                ##
-##                                                                          ##
-## DO NOT CHANGE ANYTHING ELSE BELOW. ONLY FILL IN THE LOGIC.      			##
-##                                                                          ##
-## Good Luck!                                                               ##
-##############################################################################
-##############################################################################
+## You should see the output printed once your program runs.                	##
+##                                                                          	##
+## DO NOT CHANGE ANYTHING ELSE BELOW. ONLY FILL IN THE LOGIC.      		##
+##                                                                          	##
+## Good Luck!                                                               	##
+##################################################################################
+##################################################################################
 
 
 def findSumDieRoll(n):
