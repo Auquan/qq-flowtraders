@@ -21,7 +21,7 @@
 ## For both, you only have to fill in the math function where indicated     	##
 ## 										##									##
 ## You can run this template file to see the output of your functions       	##
-## for a 6 sided die.														## 
+## for a 6 sided die.														##
 ## Simply run: `python problem1_template.py`                            	##
 ## You should see the output printed once your program runs.                	##
 ##                                                                          	##
@@ -39,18 +39,19 @@ def findSumDieRoll(n):
 
 	sumRolls = n/2 # Replace me with your answer
 
-	return sumRolls
+	return round(sumRolls, 2)
 
 def findNumberOfRolls(n):
 	##################################
 	##          FILL ME IN          ##
 	##################################
-	
+
 	numRolls = n/2	# Replace me with your answer
 
-	return numRolls
+	return round(numRolls, 2)
 
 if __name__ == "__main__":
 	numberOfSides = 6
-	print('For a %i-sided die, expected value of sum: %i and number of rolls: %i'%(numberOfSides\
-		, findSumDieRoll(numberOfSides), findNumberOfRolls(numberOfSides)))
+	sumOfRolls = findSumDieRoll(numberOfSides)
+	numberOfRolls = findNumberOfRolls(numberOfSides)
+	print('For a %i-sided die, expected value of sum: %.2f and number of rolls: %.2f'%(numberOfSides, sumOfRolls, numberOfRolls))
