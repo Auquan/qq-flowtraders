@@ -41,10 +41,10 @@ def findSecondMeasurement(firstMeasurement, standardDeviation):
 
 	secondMeasurement = firstMeasurement + standardDeviation   # Replace me with your answer
 
-	return secondMeasurement
+	return round(secondMeasurement, 2)
 
 if __name__ == "__main__":
 	standardDeviation = 3
 	firstMeasurement = 105
-	print('For First Measurement %i, standard deviation %i, Expected second measurement: %i'%(firstMeasurement, standardDeviation\
+	print('For First Measurement %.2f, standard deviation %.2f, Expected second measurement: %.2f'%(firstMeasurement, standardDeviation\
 		,findSecondMeasurement(firstMeasurement, standardDeviation)))
