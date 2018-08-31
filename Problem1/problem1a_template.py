@@ -51,7 +51,7 @@ def findNumberOfRolls(n):
 	return round(numRolls, 2)
 
 if __name__ == "__main__":
-	numberOfSides = 6
+	numberOfSides = 6.0
 	sumOfRolls = findSumDieRoll(numberOfSides)
 	numberOfRolls = findNumberOfRolls(numberOfSides)
 	print('For a %i-sided die, expected value of sum: %.2f and number of rolls: %.2f'%(numberOfSides, sumOfRolls, numberOfRolls))
