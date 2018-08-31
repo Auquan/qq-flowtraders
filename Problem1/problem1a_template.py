@@ -1,9 +1,9 @@
 ##################################################################################
 ##################################################################################
-## Template file for problem 1. 						##
-## First, fill in your answer logic below					##
+## Template file for problem 1. 						                        ##
+## First, fill in your answer logic below					                    ##
 ##################################################################################
-#                                LOGIC GOES BELOW                     		#
+#                                LOGIC GOES BELOW                     		    #
 ##################################################################################
 #
 #
@@ -12,46 +12,46 @@
 #
 ##################################################################################
 ##################################################################################
-## You have to fill in two functions BELOW 					##
-## Both take in input n = number of sides in the die 				##
-## 										##									##
-## 1. findSumDieRoll(n)	: Return expected value of sum 				##
-## 2. findNumberOfRolls(n)  : Return expected value of number of rolls 		##
-## 										##									##
+## You have to fill in two functions BELOW 					                    ##
+## Both take in input n 				                                        ##
+## 										                                        ##
+## 1. findSum(n)	    : Return expected value of sum  			            ##
+## 2. findNumber(n)  : Return expected value of number        				    ##
+## 																			    ##
 ## For both, you only have to fill in the math function where indicated     	##
-## 										##									##
+## 																			    ##
 ## You can run this template file to see the output of your functions       	##
-## for a 6 sided die.														##
-## Simply run: `python problem1_template.py`                            	##
+## for n=6.         														    ##
+## Simply run: `python problem1_template.py`                            	    ##
 ## You should see the output printed once your program runs.                	##
 ##                                                                          	##
-## DO NOT CHANGE ANYTHING ELSE BELOW. ONLY FILL IN THE LOGIC.      		##
+## DO NOT CHANGE ANYTHING ELSE BELOW. ONLY FILL IN THE LOGIC.      		        ##
 ##                                                                          	##
 ## Good Luck!                                                               	##
 ##################################################################################
 ##################################################################################
 
 
-def findSumDieRoll(n):
+def findSum(n):
 	##################################
 	##          FILL ME IN          ##
 	##################################
 
-	sumRolls = n/2 # Replace me with your answer
+	sumR = n/2 # Replace me with your answer
 
-	return round(sumRolls, 2)
+	return round(sumR, 2)
 
-def findNumberOfRolls(n):
+def findNumber(n):
 	##################################
 	##          FILL ME IN          ##
 	##################################
 
-	numRolls = n/2	# Replace me with your answer
+	numR = n/2	# Replace me with your answer
 
-	return round(numRolls, 2)
+	return round(numR, 2)
 
 if __name__ == "__main__":
-	numberOfSides = 6
-	sumOfRolls = findSumDieRoll(numberOfSides)
-	numberOfRolls = findNumberOfRolls(numberOfSides)
-	print('For a %i-sided die, expected value of sum: %.2f and number of rolls: %.2f'%(numberOfSides, sumOfRolls, numberOfRolls))
+	inputN = 6
+	sumR = findSum(inputN)
+	numR = findNumber(inputN)
+	print('For input n=%i, expected value of sum: %.2f and number: %.2f'%(inputN, sumR, numR))
