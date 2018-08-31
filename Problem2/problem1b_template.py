@@ -1,22 +1,34 @@
-##############################################################################
-##############################################################################
-## Template file for problem 1b. You have to fill in function 				##
-## findSecondMeasurement(firstMeasurement, standardDeviation)		 		##
-## below. It takes in input firstMeasurement, standardDeviation				##
-## and returns expected value of second measurement 						##
-## 																		 	##
-## You only have to fill in the math function where indicated     			##
-##                                                                          ##
-## You can run this template file to see the output of your function	    ##
-## for standardDeviation = 3 and firstMeasurement = 105						## 
+##################################################################################
+##################################################################################
+## Template file for problem 2. 						##
+## First, fill in your answer logic below					##
+##################################################################################
+#                                LOGIC GOES BELOW                     		#
+##################################################################################
+#
+#
+#
+#
+#
+##################################################################################
+##################################################################################
+## Fill in function 								##
+## findSecondMeasurement(firstMeasurement, standardDeviation)		 	##
+## below. It takes in input firstMeasurement, standardDeviation			##
+## and returns expected value of second measurement 				##
+##                                                                          	##
+## You only have to fill in the math function where indicated     		##
+##                                                                          	##
+## You can run this template file to see the output of your function	    	##
+## for standardDeviation = 3 and firstMeasurement = 105				## 
 ## Simply run: `python problem1b_template.py`                            	##
-## You should see the output printed once your program runs.                ##
-##                                                                          ##
-## DO NOT CHANGE ANYTHING ELSE BELOW. ONLY FILL IN THE LOGIC.      			##
-##                                                                          ##
-## Good Luck!                                                               ##
-##############################################################################
-##############################################################################
+## You should see the output printed once your program runs.                	##
+##                                                                          	##
+## DO NOT CHANGE ANYTHING ELSE BELOW. ONLY FILL IN THE LOGIC.      		##
+##                                                                          	##
+## Good Luck!                                                               	##
+##################################################################################
+##################################################################################
 
 
 def findSecondMeasurement(firstMeasurement, standardDeviation):
