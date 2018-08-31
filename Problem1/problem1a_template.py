@@ -36,7 +36,6 @@ def findSum(n):
 	##################################
 	##          FILL ME IN          ##
 	##################################
-
 	sumR = n/2 # Replace me with your answer
 
 	return round(sumR, 2)
@@ -45,7 +44,6 @@ def findNumber(n):
 	##################################
 	##          FILL ME IN          ##
 	##################################
-
 	numR = n/2	# Replace me with your answer
 
 	return round(numR, 2)
