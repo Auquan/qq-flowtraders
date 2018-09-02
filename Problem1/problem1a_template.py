@@ -36,16 +36,16 @@ def findSumDieRoll(n):
 	##################################
 	##          FILL ME IN          ##
 	##################################
-
+	# n is a float
 	sumRolls = n/2 # Replace me with your answer
 
 	return round(sumRolls, 2)
 
-def findNumberOfRolls(n):
+def findNumberOfRolls(float n):
 	##################################
 	##          FILL ME IN          ##
 	##################################
-
+	# n is a float
 	numRolls = n/2	# Replace me with your answer
 
 	return round(numRolls, 2)
