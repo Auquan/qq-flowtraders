@@ -86,7 +86,7 @@ class MyTradingParams(TradingSystemParameters):
         return timedelta(60, 0)  # minutes, seconds
 
     def getStartingCapital(self):
-        return 10000*len(self.__instrumentIds)
+        return 1000000*len(self.__instrumentIds)
 
     '''
     This is a way to use any custom features you might have made.
