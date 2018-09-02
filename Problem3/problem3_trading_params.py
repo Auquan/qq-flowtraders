@@ -3,8 +3,8 @@ from backtester.features.feature import Feature
 from datetime import timedelta
 from backtester.dataSource.csv_data_source import CsvDataSource
 from backtester.timeRule.us_time_rule import USTimeRule
-from problem2_execution_system import Problem2ExecutionSystem
-from problem2_order_placer import Problem2OrderPlacer
+from problem3_execution_system import Problem3ExecutionSystem
+from problem3_order_placer import Problem3OrderPlacer
 from backtester.trading_system import TradingSystem
 from backtester.version import updateCheck
 from backtester.constants import *
@@ -13,6 +13,13 @@ from backtester.logger import *
 import pandas as pd
 import numpy as np
 import sys
+from sklearn import linear_model
+from sklearn import metrics as sm
+
+## Make your changes to the functions below.
+## SPECIFY the symbols you are modeling for in getSymbolsToTrade() below
+## You need to specify features you want to use in getInstrumentFeatureConfigDicts() and getMarketFeatureConfigDicts()
+## and create your predictions using these features in getPrediction()
 
 ## Don't change any other function
 ## The toolbox does the rest for you, from downloading and loading data to running backtest
@@ -27,12 +34,12 @@ class MyTradingParams(TradingSystemParameters):
         self.__tradingFunctions = tradingFunctions
         self.__dataSetId = self.__tradingFunctions.getDataSetId()
         self.__instrumentIds = self.__tradingFunctions.getSymbolsToTrade()
-        self.__priceKey = 'bid'
+        self.__priceKey = 'fairPrice'
         self.__additionalInstrumentFeatureConfigDicts = []
         self.__additionalMarketFeatureConfigDicts = []
-        self.__fees = {'brokerage': 0.0,'spread': 0.0}
-        self.__startDate = '2012/02/07'
-        self.__endDate =  '2012/02/27'
+        self.__fees = {'brokerage': 0.00,'spread': 0.0}
+        self.__startDate = '2018/01/08'
+        self.__endDate =  '2018/01/23'
         super(MyTradingParams, self).__init__()
 
 
@@ -45,7 +52,7 @@ class MyTradingParams(TradingSystemParameters):
         return CsvDataSource(cachedFolderName='historicalData/',
                              dataSetId=self.__dataSetId,
                              instrumentIds=instrumentIds,
-                             downloadUrl = 'https://raw.githubusercontent.com/Auquan/qq4Data/master',
+                             downloadUrl = 'https://raw.githubusercontent.com/Auquan/qq5Data/master',
                              timeKey = 'datetime',
                              timeStringFormat = '%Y-%m-%d %H:%M:%S',
                              startDateStr=self.__startDate,
@@ -79,7 +86,7 @@ class MyTradingParams(TradingSystemParameters):
         return timedelta(60, 0)  # minutes, seconds
 
     def getStartingCapital(self):
-        return 1000000*len(self.__instrumentIds)
+        return 10000000*len(self.__instrumentIds)
 
     '''
     This is a way to use any custom features you might have made.
@@ -155,7 +162,7 @@ class MyTradingParams(TradingSystemParameters):
     '''
 
     def getExecutionSystem(self):
-        return Problem2ExecutionSystem(enter_threshold=0.99,
+        return Problem3ExecutionSystem(enter_threshold=0.99,
                                     exit_threshold=0.55,
                                     longLimit=100000,
                                     shortLimit=100000,
@@ -170,7 +177,7 @@ class MyTradingParams(TradingSystemParameters):
     '''
 
     def getOrderPlacer(self):
-        return Problem2OrderPlacer()
+        return Problem3OrderPlacer()
 
     '''
     Returns the amount of lookback data you want for your calculations. The historical market features and instrument features are only
@@ -179,7 +186,7 @@ class MyTradingParams(TradingSystemParameters):
     '''
 
     def getLookbackSize(self):
-        return max(720, self.__tradingFunctions.getLookbackSize())
+        return max(380, self.__tradingFunctions.getLookbackSize())
 
     def getPriceFeatureKey(self):
         return self.__priceKey
@@ -207,7 +214,7 @@ class MyTradingParams(TradingSystemParameters):
         self.__startDate = dateDict['startDate']
         self.__endDate = dateDict['endDate']
 
-    def setFees(self, feeDict={'brokerage': 0.0001,'spread': 0.05}):
+    def setFees(self, feeDict={'brokerage': 0.0000,'spread': 0.00}):
         self.__fees = feeDict
 
     def setAdditionalInstrumentFeatureConfigDicts(self, dicts = []):
@@ -222,7 +229,11 @@ class TrainingPredictionFeature(Feature):
     def computeForInstrument(cls, updateNum, time, featureParams, featureKey, instrumentManager):
         tf = featureParams['function']
         predictions = pd.Series(0, dtype='object', index = instrumentManager.getAllInstrumentsByInstrumentId())
-        predictions = tf.getPrediction(time, updateNum, instrumentManager, predictions)
+        marketSeries = pd.Series(0.0, index = instrumentManager.getAllInstrumentsByInstrumentId())
+        fairPrice = tf.predictFairPrice(time, updateNum, instrumentManager, marketSeries)
+        spread = pd.Series([1, 3, .3, .25, 2.5], index = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO'])
+        for i in predictions.index:
+            predictions[i] = (fairPrice[i], spread[i])
         return predictions
 
 
