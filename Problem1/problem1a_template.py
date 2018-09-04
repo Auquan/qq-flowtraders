@@ -41,7 +41,7 @@ def findSumDieRoll(n):
 
 	return round(sumRolls, 2)
 
-def findNumberOfRolls(float n):
+def findNumberOfRolls(n):
 	##################################
 	##          FILL ME IN          ##
 	##################################
